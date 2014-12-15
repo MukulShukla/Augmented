@@ -9,3 +9,15 @@ If OpenCV is setup successfully you can use
 sudo g++ myprog.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect
 
 to compile.
+
+Gesture Recognition:
+
+Dependencies:
+gcc, opencv-doc, libcv2.1, linhighgui2.1, libcvaux2.1, libcv-dev, libcvaux-dev, linhighgui-dev, libx11-dev, and libxtst-dev
+
+To Run:
+g++ install.cpp -o install
+./install
+./initialize
+./gesture
+
