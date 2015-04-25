@@ -1,3 +1,18 @@
+    This file is part of SmartCam (made as a part of Senior Project by student at MSRIT)
+
+    SmartCam is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    SmartCam is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    
 How detect motion with images?
 
 Suppose we have 2 images, the images are a linear subsequence with some delay c between them. If we would compare every pixel of the 2 images, and we notice they’re all the same, we can conclude the 2 images are identical. But if they don’t, we could say, something happened during the delay time c. Someone could place an object in front of the camera, or walked by. And yes, this is the idea we will use for the motion detection.
