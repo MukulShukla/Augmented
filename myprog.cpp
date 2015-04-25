@@ -25,19 +25,20 @@
    CvCapture* capture;
    Mat frame;
 
-   //-- 1. Load the cascades
+   //-- 1. Load the cascades that is the XML files generated which have detection data
    if( !face_cascade.load( face_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
    if( !eyes_cascade.load( eyes_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
 
-   //-- 2. Read the video stream
+   //-- 2. Read the video stream -- Start Capture from webcam
    capture = cvCaptureFromCAM( -1 );
    if( capture )
    {
      while( true )
      {
+	//Get each frame out from the stream
    frame = cvQueryFrame( capture );
 
-   //-- 3. Apply the classifier to the frame
+   	//-- 3. Apply the classifier to the frame
        if( !frame.empty() )
        { detectAndDisplay( frame ); }
        else
@@ -143,26 +144,38 @@ void overlayImage(const Mat &background, const Mat &foreground, Mat &output, Poi
 /** @function detectAndDisplay */
 void detectAndDisplay( Mat frame )
 {
+  //receives a floating point matrix containing the frame data
   std::vector<Rect> faces;
   Mat frame_gray;
 
-  cvtColor( frame, frame_gray, CV_BGR2GRAY );
+  //Converts frame to gray scale for better detection and reduced noise
+  cvtColor( frame, frame_gray, CV_BGR2GRAY ); 
+  //It equalizes the image histogram which is a graphical representation of the intensity distribution of an image
+  // It is a method that improves the contrast in an image, in order to stretch out the intensity range.
   equalizeHist( frame_gray, frame_gray );
 
-  //-- Detect faces
+  //-- Detect faces -- faces array contains the detected faces
+  //Detects objects of different sizes in the input image. The detected objects are returned as a list of rectangles.
+  // Pre-writen function
   face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
 
   for( size_t i = 0; i < faces.size(); i++ )
   {
+    // iterating through the face
+    // find center of the face
     Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
     
 //ellipse for face
 //ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
 
+	//loading the image to render
 	Mat image;
 	image=imread("sun.png", -1);
+	//Initializing a size object of face size
 	Size size(faces[i].width, faces[i].height);
+	//setting base point for resize	
 	Point base(center.x-((faces[i].width)/2),center.y-((faces[i].width)/2));
+	//image resized and stored to image again	
 	resize(image, image, size);
 //Try 1
 //	IplImage ipl=image;
@@ -219,10 +232,8 @@ else srcBGR = image;
 
 //try6
 
+//Image is displayed after overlaying one image on another
 overlayImage(frame, image, frame, base);
-
-
-
 
     Mat faceROI = frame_gray( faces[i] );
     std::vector<Rect> eyes;
@@ -234,7 +245,7 @@ overlayImage(frame, image, frame, base);
      {
        Point center( faces[i].x + eyes[j].x + eyes[j].width*0.5, faces[i].y + eyes[j].y + eyes[j].height*0.5 );
        int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
-       
+       	// eyes may be displayed here
 	//circle( frame, center, radius, Scalar( 255, 0, 0 ), 4, 8, 0 );
      
 
