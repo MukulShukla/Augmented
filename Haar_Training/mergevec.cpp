@@ -1,3 +1,4 @@
+    /*
     This file is part of SmartCam (made as a part of Senior Project by student at MSRIT)
 
     SmartCam is free software: you can redistribute it and/or modify
@@ -12,7 +13,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
-    
+    */
 #include <cv.h>
 #include <highgui.h>
 #include <stdio.h>
