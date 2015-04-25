@@ -1,7 +1,3 @@
-
-!!!! Project Complete !!!
-
-
 Implementing the code is very simple. However sometimes executable files do not run
 correctly, in which case the code has to be compiled before running. The packages required for compiling the code are gcc, opencv-doc, libcv2.1, linhighgui2.1, libcvaux2.1, libcv-dev, libcvaux-dev, linhighgui-dev, libx11-dev, and libxtst-dev. These packages can be collectively
 installed from the Synaptic Package Manager or using individual system commands:
@@ -17,7 +13,6 @@ Running the file install inturn compiles all the other required files, provided 
 $ ./install
 
 
-**** If install runs correctly you dont need to do this ***
 Altenetively, you can compile all the files individually using the command:
 $ g++ `pkg-config opencv --cflags` [filename].cpp -o [filename]
 `pkg-config opencv --libs` -lX11 -lXtst
