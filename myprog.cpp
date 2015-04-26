@@ -17,6 +17,7 @@
  CascadeClassifier face_cascade;
  CascadeClassifier eyes_cascade;
  string window_name = "Anon!";
+ string filename="mask2.png";
  RNG rng(12345);
 
  /** @function main */
@@ -37,15 +38,19 @@
      {
 	//Get each frame out from the stream
    frame = cvQueryFrame( capture );
-
-   	//-- 3. Apply the classifier to the frame
+	
+	//-- 3. Apply the classifier to the frame
        if( !frame.empty() )
        { detectAndDisplay( frame ); }
        else
        { printf(" --(!) No captured frame -- Break!"); break; }
 
        int c = waitKey(10);
-       if( (char)c == 'c' ) { break; }
+       if( c == 27 ) { break; }
+	else if (c == 97) {filename="sun.png";}
+	else if (c == 98) {filename="mask1.png";}
+	else if (c == 99){filename="mask2.png";}
+   	
       }
    }
    return 0;
@@ -170,7 +175,7 @@ void detectAndDisplay( Mat frame )
 
 	//loading the image to render
 	Mat image;
-	image=imread("sun.png", -1);
+	image=imread(filename, -1);
 	//Initializing a size object of face size
 	Size size(faces[i].width, faces[i].height);
 	//setting base point for resize	
