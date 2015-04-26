@@ -146,7 +146,7 @@ int main( int argc, char* argv[] ) {
 				differ(mid,frames);
 				crosshair(mid);
 	
-				cvShowImage( "Recording ...press ESC to stop !",mid );
+				cvShowImage( "Recording ...press ESC to stop !",frames );
 				char c = cvWaitKey(33);
 				if( c == 27 ) break;
 				if( c == 32 ) {
