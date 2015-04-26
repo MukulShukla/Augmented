@@ -140,7 +140,7 @@ main( int argc, char* argv[] ) {
 		crosshair(mid);
 		curr_gest=findcenter(mid);
 		
-		//cvShowImage( "Recording ...press ESC to stop !",mid );
+		cvShowImage( "Recording ...press ESC to stop !",frames );
 		char c = cvWaitKey(33);
 		if( c == 27 ) break;
 		time++;
