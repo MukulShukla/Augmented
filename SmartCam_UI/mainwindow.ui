@@ -23,6 +23,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Face Detection</string>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -30,7 +33,7 @@
      <string notr="true">background-color: rgb(255, 239, 180);</string>
     </property>
     <property name="text">
-     <string>Face Detection</string>
+     <string>GlamCam</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -45,6 +48,9 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Gesture Recognition</string>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -52,7 +58,7 @@
      <string notr="true">background-color: rgb(255, 239, 180);</string>
     </property>
     <property name="text">
-     <string>Live Gesture Recognition</string>
+     <string>LivCam</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -67,6 +73,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Motion detection</string>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -74,26 +83,10 @@
      <string notr="true">background-color: rgb(255, 239, 180);</string>
     </property>
     <property name="text">
-     <string>Motion Detection </string>
+     <string>HappyCam</string>
     </property>
     <property name="flat">
      <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>-10</y>
-      <width>221</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Pics.qrc">:/Pics/Questionmark.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -101,7 +94,7 @@
      <rect>
       <x>40</x>
       <y>330</y>
-      <width>251</width>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -115,9 +108,9 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>420</x>
       <y>330</y>
-      <width>251</width>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -158,6 +151,38 @@
     </property>
     <property name="text">
      <string>About Us</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>330</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(224, 254, 255);</string>
+    </property>
+    <property name="text">
+     <string>Watch TOOL Video</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>70</y>
+      <width>141</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Pics.qrc">:/new/prefix1/Questionmark.png</pixmap>
     </property>
    </widget>
   </widget>

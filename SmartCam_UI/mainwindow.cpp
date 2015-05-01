@@ -7,6 +7,7 @@
 #include "gesture.h"
 #include "dialog.h"
 #include <stdio.h>
+#include <QMovie>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,6 +19,13 @@ MainWindow::MainWindow(QWidget *parent) :
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
+    QLabel *processLabel = new QLabel(this);
+    processLabel->setGeometry(25,25,400,200);
+    processLabel->setStyleSheet("border: 5px solid white");
+    processLabel->setScaledContents(true);
+   QMovie *movie = new QMovie("/home/mukul/FinalYearProj/Augmented/Augmented/SmartCam_UI/Gif6.gif");
+   processLabel->setMovie(movie);
+   movie->start();
 }
 
 MainWindow::~MainWindow()
@@ -46,13 +54,13 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    Dialog *C=new Dialog();
-    C->setModal(true);
-    C->show();
+    //Dialog *C=new Dialog();
+    //C->setModal(true);
+    //C->show();
     int res=system("cd /home/mukul/FinalYearProj/Augmented/Augmented/;g++ myprog.cpp -o facedetect -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect");
     if (!res)
     {
-        C->hide();
+        //C->hide();
         system("cd /home/mukul/FinalYearProj/Augmented/Augmented/;./facedetect");
     }
 }
@@ -66,13 +74,13 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    Dialog *C=new Dialog();
-    C->setModal(true);
-    C->show();
+    //Dialog *C=new Dialog();
+    //C->setModal(true);
+    //C->show();
     int res=system("cd /home/mukul/FinalYearProj/Augmented/Augmented/MotionDetection;g++ main.cpp -o motion -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect;");
     if (!res)
     {
-        C->hide();
+        //C->hide();
         system("cd /home/mukul/FinalYearProj/Augmented/Augmented/MotionDetection;./motion");
     }
 }

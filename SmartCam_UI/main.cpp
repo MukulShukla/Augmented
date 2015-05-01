@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
     splash->setPixmap(QPixmap("/home/mukul/FinalYearProj/Augmented/Augmented/SmartCam_UI/2.jpeg"));
     splash->show();
     MainWindow w;
-    QTimer::singleShot(1500,splash,SLOT(close()));
-    QTimer::singleShot(1500,&w,SLOT(show()));
+    QTimer::singleShot(2500,splash,SLOT(close()));
+    QTimer::singleShot(2500,&w,SLOT(show()));
     //w.show();
     
     return a.exec();

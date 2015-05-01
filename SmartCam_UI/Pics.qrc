@@ -1,6 +1,5 @@
 <RCC>
-    <qresource prefix="/Pics">
-        <file>1.png</file>
+    <qresource prefix="/new/prefix1">
         <file>Questionmark.png</file>
     </qresource>
 </RCC>
