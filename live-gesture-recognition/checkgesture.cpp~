@@ -54,7 +54,6 @@ int main( int argc, char* argv[] ) {
 			 fname1[10] = "xcmmd.bin",
 			 fname2[10] = "xgest.jpg";
 	cons x, img[64];
-	//check if arguments are valid
 	if(argv[1]==NULL){
 		cout<<"Invalid arguments\nUse as:\n";
 		cout<<"checkgesture [geture-character]\n\n";
@@ -70,7 +69,6 @@ int main( int argc, char* argv[] ) {
 		1
 	);
 	
-	// if arguments are valid, we open the file for the gesture
 	fname[0]=g;
 	fp = fopen(fname,"rb+");
 
@@ -81,7 +79,6 @@ int main( int argc, char* argv[] ) {
   }
   else cout<<"Load Successful : '"<<fname<<"'.\n";   
   
-  //read the image
   fread(&nframe,4,1,fp);
   for(i=0 ; i < nframe ; i++){
 		fread(&x,8,1,fp);
@@ -118,7 +115,6 @@ int main( int argc, char* argv[] ) {
 	
 	cout<<"\nPress ESC to close...\n";
 	cvNamedWindow("Gesture. Press ESC to close...", CV_WINDOW_AUTOSIZE); 
-	//show image, Esc to exit	
 	cvShowImage("Gesture. Press ESC to close...", res); 
 	while(true){
 		c = cvWaitKey(100); // wait until user hits a key
