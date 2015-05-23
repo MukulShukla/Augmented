@@ -151,10 +151,10 @@ int main (int argc, char * const argv[])
 
     // If more than 'there_is_motion' pixels are changed, we say there is motion
     // and store an image on disk
-    int there_is_motion = 5;
+    int there_is_motion = 50;
     
     // Maximum deviation of the image, the higher the value, the more motion is allowed
-    int max_deviation = 20;
+    int max_deviation = 60;
     
     // Erode kernel
     Mat kernel_ero = getStructuringElement(MORPH_RECT, Size(2,2));
@@ -187,10 +187,13 @@ int main (int argc, char * const argv[])
         // If a lot of changes happened, we assume something changed.
         if(number_of_changes>=there_is_motion)
         {
-            if(number_of_sequence>0){ 
-                saveImg(result,DIR,EXT,DIR_FORMAT.c_str(),FILE_FORMAT.c_str());
-                saveImg(result_cropped,DIR,EXT,DIR_FORMAT.c_str(),CROPPED_FILE_FORMAT.c_str());
+            /*
+		Disabled, because saving was consuming time --> Can be debugged and enabled later
+		if(number_of_sequence>0){ 
+                	saveImg(result,DIR,EXT,DIR_FORMAT.c_str(),FILE_FORMAT.c_str());
+               		saveImg(result_cropped,DIR,EXT,DIR_FORMAT.c_str(),CROPPED_FILE_FORMAT.c_str());
             }
+		*/
             number_of_sequence++;
         }
         else

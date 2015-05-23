@@ -151,7 +151,7 @@ main( int argc, char* argv[] ) {
 		char c = cvWaitKey(33);
 		// break on Esc, increase time
 	
-		if( c == 27 ) break;
+		if( c == 27 ) exit(0);
 		time++;
 		if(time > (ram*30*waittime)/3){
 			if(!a) return 1;
