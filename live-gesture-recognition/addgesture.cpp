@@ -98,7 +98,7 @@ int main( int argc, char* argv[] ) {
 	FILE *fp;
 	//cvNamedWindow( "Recording ...press ESC to stop !", CV_WINDOW_AUTOSIZE );
 	bool a=false;
-	char g='\0',l='\0', str1[8]="bg";
+	char g='\0',l='\0', str1[8]="";
 	char* cmmd;
 	cons x, gest[32], fin[32];
 	int i=0,N=32,e,j,q;
